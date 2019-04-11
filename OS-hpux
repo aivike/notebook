@@ -1,0 +1,14 @@
+hp-ux操作系统命令：
+For a single process (in this case PID 4161)
+UNIX95= ps -p 4161 -o pid,sz,pcpu,ruser,args
+
+For all processes:
+UNIX95= ps -e -o pid,sz,pcpu,ruser,args
+
+Top 5 highest cpu user
+UNIX95= ps -e -o pcpu,pid | sort -n -r |grep -v "%CPU"|head -5
+
+查看进程的某些线程： pstack pid |head -30  
+$ pstack 11247|head -100
+
+/opt/java6/bin/jstack 11247 > jstack_java.log
